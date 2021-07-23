@@ -1,0 +1,59 @@
+#+OPTIONS: toc:nil
+* Minimum Reqs
+Database follows project hierarchy
+Experiment Data saving follows project hierarchy
+Should non-hierarchical data be stored in a separate database?
+
+Hierarchical structures
+SuperProject -> project -> subproject      -> ... -> experiment -> subject -> experiment mode -> {data, ...}
+- maybe split at experiment?
+
+Non-hierarchical - gain in performance?
+** Subject collection fields
+Age
+Gender
+Unique ID number
+** Experiment Collction Fields
+name
+author
+creation date
+total trials
+subjects
+related papers
+description
+randomization parameters
+repository (code base)
+    dev branch
+    experiment branch
+running options
+    language (code)
+        functions (what function to call to run experiment)
+            parameters (... and what paremeters to use...)
+            parameters file (...or lodad)
+        path (to include)
+        stimuli (what stimuli to load from file)
+data saving method
+blocks
+exp type
+    psychophysical
+        2IFC
+            n standards
+            n comparisons/standard
+    matching
+expmodes
+    train
+    preliminary
+** Project Collection Fields
+Description
+Topic
+Tag
+File/directory
+** General options
+default base saving directories
+** Display mode
+tree mode
+single level mode (subject mode & experiment mode)
+
+Sortable by any field
+   project hierarchy
+   parameters
