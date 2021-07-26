@@ -1,10 +1,11 @@
-#+OPTIONS: toc:nil num:nil
+#+begin_src 
 ███████╗██╗  ██╗██████╗ ████████╗██████╗ ██╗  ██╗
 ██╔════╝╚██╗██╔╝██╔══██╗╚══██╔══╝██╔══██╗██║ ██╔╝
 █████╗   ╚███╔╝ ██████╔╝   ██║   ██████╔╝█████╔╝ 
 ██╔══╝   ██╔██╗ ██╔═══╝    ██║   ██╔══██╗██╔═██╗ 
 ███████╗██╔╝ ██╗██║        ██║   ██║  ██║██║  ██╗
 ╚══════╝╚═╝  ╚═╝╚═╝        ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝
+#+end_src
 
 \\
 expTrk is a super-tool to keep track of experiment data and metadata.\\\\
@@ -15,4 +16,3 @@ It has several key functions:\\
     - Subject Summarizer
     - Data tracker / updater
 
-* Dependencies:

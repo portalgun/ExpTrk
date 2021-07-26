@@ -1,59 +1,145 @@
 #+OPTIONS: toc:nil
-* Minimum Reqs
-Database follows project hierarchy
-Experiment Data saving follows project hierarchy
-Should non-hierarchical data be stored in a separate database?
 
-Hierarchical structures
-SuperProject -> project -> subproject      -> ... -> experiment -> subject -> experiment mode -> {data, ...}
-- maybe split at experiment?
+**ExpTrk**
+Experiment Tracker
 
-Non-hierarchical - gain in performance?
-** Subject collection fields
-Age
-Gender
-Unique ID number
-** Experiment Collction Fields
-name
-author
-creation date
+Automate as much possible
+
+* TODO
+Name
+What features you want
+What things do you want to track?
+github
+    get everybody signed up
+    master = protected
+    dev = protected
+* Common Daily Problems in Science
+- What figures came from this data?
+- What code and version generated this data?
+- What parameters did I use to generate this figure?
+- When did I run that simulation last?
+- Where even is my data?
+- What experiments need to be ran still.
+- What blocks has my subject ran so far?
+- What experiments ran this certain/parameter experiment
+
+The information required to answer these questions is called metadata.
+Metadata is light, trackable, but is not tracked.
+
+Alot of this information is readily avaiable
+OS - user, hostname, time
+git - status
+conda - environment
+
+
+* Concept
+Metadata tracking and query system generalizable to most/all scientific work.
+Essentially the parts of a lab-notebook that can be automated.
+In principle, if I deleted some arbitrary figure, I could quickly regenerate it if I knew a few details about it.
+Somebody want to replicate your experiment? Just send them an ExpTrk file.
+
+Each object of an 'experiment' acts as a queriable node. E.g. Subjects, model, data.
+Objects accumulate 'links' or associations with other objects
+
+Python decorators used to instantiate or query a tracked object.
+Most metadata held in a MySql database.
+Interface that is able to load and run various parts of experiment
+Interfaces with git to deal with different versions.
+
+Usage
+    | code    | on commit |
+    | data    | on save   |
+    | figures | on save   |
+
+All filenames are auto-generated, abstracted away from user
+* Classes
+Experiment
+Subjects
+Researcher
+Stimuli
+Model
+Figures
+LabNotebooks
+Host
+Data
+Code
+Article
+* Integrations
+OS -> host, user
+jupyter-notebook
+conda
+* DB structure
+Obj
+| obj-id | type | name          | creation d-t | Creator* | import d-t | Importer* | vers-id | seed-id |
+|--------+------+---------------+--------------+----------+------------+-----------+---------+---------|
+|      1 | exp  | "Experiment1" |              |          |            |           |         |         |
+|      2 | subj | "Subject1"    |              |          |            |           |         |         |
+|      3 | subj | "Subject2"    |              |          |            |           |         |         |
+*Researcher-id
+
+Versions
+| vers-id | type | hash | tag/branch |
+
+Seeds
+| seed-id | lang | lib | type | val | cur-iter |
+
+Researchers
+| researcher-id | name |
+|               |      |
+
+Resarcher-aliases
+| researcher-id | user | host |
+
+Hierarchy [Obj-obj]
+| par-obj-id | chi-obj-id |
+|          1 |          2 |
+|          1 |          3 |
+
+Obj-location
+| obj-id | lodation (URL or fname) |
+
+Siblings [obj-obj]
+| obj-id   | obj-id   | par-obj-id |
+
+Executions
+| obj-id | d-t | researcher-id | host-id |
+|        |     |               |         |
+
+Tags
+| tag-id | name |
+
+
+Obj-Tags
+| obj-id | tag-id |
+
+Parameters
+| param-id | name | type | size |
+
+ParamVals
+| param-id | val | seed |
+
+* Common Attributes
+Name
+Date-time
+    Creation
+    Execution
+Class
+Class version
+Location
+Links
+Parameters
+* Experiment
 total trials
-subjects
-related papers
-description
-randomization parameters
-repository (code base)
-    dev branch
-    experiment branch
-running options
-    language (code)
-        functions (what function to call to run experiment)
-            parameters (... and what paremeters to use...)
-            parameters file (...or lodad)
-        path (to include)
-        stimuli (what stimuli to load from file)
-data saving method
 blocks
-exp type
+citation library
+description
+type
     psychophysical
         2IFC
             n standards
             n comparisons/standard
-    matching
 expmodes
     train
     preliminary
-** Project Collection Fields
-Description
-Topic
-Tag
-File/directory
-** General options
-default base saving directories
-** Display mode
-tree mode
-single level mode (subject mode & experiment mode)
-
-Sortable by any field
-   project hierarchy
-   parameters
+* Subj
+- should be very extensible
