@@ -1,13 +1,6 @@
 
 ## to allow the terminal to read these commands
 
-<<<<<<< Updated upstream
-import subprocess
-s = subprocess.getstatusoutput(f'ps -ef | grep python3')
-print(s)
-
-import argparse
-=======
 !/usr/bin/env python3
 
 
@@ -29,6 +22,6 @@ def overall_progress():
 
 
 
->>>>>>> Stashed changes
+
 
 
