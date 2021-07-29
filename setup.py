@@ -3,15 +3,15 @@
 from setuptools import setup
 
 setup(
-    name='exptrk',
+    name='metatrack',
     version='0.1.0',
-    py_modules=['exptrk'],
+    py_modules=['metatrack'],
     install_requires=[
         'Click',
     ],
     entry_points={
         'console_scripts': [
-            'exptrk = exptrk:tracker',
+            'metatrack = metatrack:tracker',
         ],
     },
 )
