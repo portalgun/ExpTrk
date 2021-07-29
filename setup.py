@@ -11,7 +11,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'exptrk = exptrk:random',
+            'exptrk = exptrk:progress',
         ],
     },
 )
