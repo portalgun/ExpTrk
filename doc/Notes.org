@@ -13,6 +13,8 @@ github
     get everybody signed up
     master = protected
     dev = protected
+* Parts
+
 * Common Daily Problems in Science
 - What figures came from this data?
 - What code and version generated this data?
@@ -83,12 +85,9 @@ Versions
 Seeds
 | seed-id | lang | lib | type | val | cur-iter |
 
-Researchers
-| researcher-id | name |
-|               |      |
 
-Resarcher-aliases
-| researcher-id | user | host |
+Researcher-aliases
+| alias-id  | name | user | host |
 
 Hierarchy [Obj-obj]
 | par-obj-id | chi-obj-id |
@@ -113,11 +112,23 @@ Obj-Tags
 | obj-id | tag-id |
 
 Parameters
-| param-id | name | type | size |
+| param-id | name |
 
-ParamVals
-| param-id | val | seed |
 
+** parameters (no-sql)
+#+BEGIN_src
+{
+    "id":id,
+    "children":[
+        {
+            type:
+            size:
+            val:
+            fun:
+        }
+    ]
+}
+#+end_src
 * Common Attributes
 Name
 Date-time
