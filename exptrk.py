@@ -5,9 +5,11 @@
 
 import click # importing click library 
 
-@click.command()
-def random():
-    click.echo("Hello")
+# @click.command()
+# def random():
+#     click.echo("Hello")
+
+
 
 ## command groups 
 
@@ -53,13 +55,19 @@ def random():
 
 
 
+
 # command for progress bar 
 
-# @click.command() 
-# @click.option('--summary', default=1, help='Summary of the progress') 
-# @click.argument('progress_type')
-# def progress(summary, progress_type): # summary inputs can be: overall, collection, subjects, analysis, publication/writing
-# 	Controller.parse('progress', summary, progress_type)
+@click.command() 
+@click.option('-s', default='none', type=str, help='Summary of the progress') 
+@click.argument('progress_type')
+def progress(summary, progress_type): # summary inputs can be: overall, collection, subjects, analysis, publication/writing
+	# Controller.parse('progress', summary, progress_type)
+	click.echo("Progress bar being calculated")
+
+
+
+
 
 
 # commands for outputs 
