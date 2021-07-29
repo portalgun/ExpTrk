@@ -1,15 +1,16 @@
+
 from setuptools import setup
 
 setup(
-    name='termUI',
+    name='exptrk',
     version='0.1',
-    py_modules=['termUI'],
+    py_modules=['exptrk'],
     install_requires=[
         'Click',
     ],
     entry_points='''
         [console_scripts]
-        termUI=termUI:cli
+        exptrk=exptrk:cli
     ''',
 )
 
