@@ -1,9 +1,9 @@
-
+#!/usr/bin/env python3
 ## to allow the terminal to read these commands
+# (gotta have a hash in front of it and tippy top) -Dave
 
 ## filter out separate arguments to make sure goes cleanly into the controller 
 
-!/usr/bin/env python3
 
 
 import click # importing click library 
