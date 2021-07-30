@@ -20,7 +20,6 @@ import click # importing click library
 @click.option('-tr','--totalruns', default=0, type=int, show_default=True, help='Total runs for this task') # if default output 0 if previously nothing entered or output total stored or if not 0 update total
 @click.option('-ts', '--totalsubjects', default=0, type=int, show_default=True, help='Total subjects for the experiment') ## subject options # if default output total if not update default 
 @click.option('-s', '--subid', default=0, type=int, show_default=True, help='Subject ID') # if default return id if not enter pass it to controller 
-@click.option('--date',)
 @click.option('-st', '--stimuliset', nargs=2, show_default=True, help='Enter the name of your stimuli set and what task it is associated with') ## stimuli set options # if task input is All make it associate with all tasks 
 @click.option('-stv', '--stimsetversion', default=0.0, type=float, show_default=True, help='Enter the version of the stimuli set')
 @click.option('-sto', '--stimtest', default=False, type=bool, show_default=True, help='If this is your own stimuli set, enter True') 
@@ -36,8 +35,6 @@ import click # importing click library
 @click.option('-u', '--update', show_default=True, help='Variable that needs updating') ## update - set up an if loop for this with the a prompt - what is the new value. we need a variable list 
 @click.option('-p', show_default=True, help='Progress bar options: overall, collection, analysis, writing') ## progress options 
 @click.option('-ps', show_default=True, help='Progress summary for: overall, collection, analysis, writing') 
-
-
 def tracker(): # summary inputs can be: overall, collection, subjects, analysis, publication/writing
 	# contr=controller(debug)
 	# contr.send_msg("myDb","connect",host=dbhost, port=dbport, password=dbpassword)
