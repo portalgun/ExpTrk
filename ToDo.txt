@@ -1,0 +1,6 @@
+
+Things that need to be fixed for TermUI
+
+1. See if text within "" is accepted for the notes options 
+2. Make the functions in the comments 
+3. Can create universal functions for identical default values 
