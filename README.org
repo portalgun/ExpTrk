@@ -1,4 +1,4 @@
-Meta is a super-tool to keep track of experiment data and metadata.\\\\
+metaTrack is a super-tool to keep track of experiment data and metadata.\\\\
 It has several key functions:\\
     - Experiment intializer
     - Run Tracker and experiment caller
